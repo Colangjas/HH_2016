@@ -47,25 +47,25 @@ require_once('../db/connectvars.php');
         </nav>
     </div>
 
-        <form class="s12 m12 l6" method="post" action="showprogress.php">
-            <fieldset>
-                <legend>Body Specifics</legend>
-                <label for="weight">Weight: (lb)</label>
-                <input type="number" name="weight">
-                <label for="bust">Bust: (in)</label>
-                <input type="number" name="bust">
-                <label for="hip">Hips: (in)</label>
-                <input type="number" name="hip">
-                <label for="waist">Waist: (in)</label>
-                <input type="number" name="waist">
-            </fieldset>
-            <fieldset>
-                <legend>Journal</legend>
-                <label for="comment">Comments:</label>
-                <textarea name="comment" id=""></textarea>
-            </fieldset>
-            <input type="submit" name="submit" id="submit" Value="Track">
-        </form>
+    <div id="id01"></div>
+    <script>
+        function myFunction(arr) {
+            var out = "";
+            var i;
+            for(i = 0; i<arr.length; i++) {
+                out += '<p>New Entry: <br />';
+                out += 'Weight: ' + arr[i].weight +
+                    ' lb <br />Bust: '+ arr[i].bust +
+                    ' in <br />Hip: '+ arr[i].hip +
+                    ' in <br />Waist: '+ arr[i].waist +
+                    ' in <br />Comment: '+ arr[i].comment +
+                '</p>';
+            }
+            document.getElementById("id01").innerHTML = out;
+        }
+    </script>
+
+    <script src="progressTrack.js"></script>
 </body>
 
 </html>
